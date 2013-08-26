@@ -31,7 +31,7 @@ module Combine
     end
 
     def get_text
-      HtmlToTextConveter.new(html.join('<hr/>')).to_text_cached
+      HtmlWinnower.new(html.join('<hr/>')).to_text_cached
     end
   end
 end
