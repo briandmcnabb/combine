@@ -1,15 +1,10 @@
-module Combine
-  class Harvest
-
-  end
-end
-
 require 'hashie'
 
 module Combine
-  class HarvestYield < SimpleDelegator
+  class Yield < SimpleDelegator
     def initialize(metadata={})
       @metadata = metadata
+      @errors   = []
       @delegate_sd_obj = Hashie::Mash.new
     end
 
@@ -28,7 +23,7 @@ module Combine
     end
 
     def errors
-      @errors ||= []
+      @errors
     end
 
     def errors?
