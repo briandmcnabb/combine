@@ -31,7 +31,7 @@ module Combine
     end
 
     def get_text
-      HtmlWinnower.new(html.join('<hr/>')).to_text_cached
+      HtmlWinnower.new(nodes).start
     end
   end
 end
