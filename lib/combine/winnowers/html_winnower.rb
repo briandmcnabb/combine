@@ -3,7 +3,7 @@
 #       be a better option.
 
 require 'crazy_harry'
-require 'loofah'
+#require 'loofah'
 
 module Combine
   class HtmlWinnower

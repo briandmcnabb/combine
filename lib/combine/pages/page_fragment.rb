@@ -1,3 +1,5 @@
+require 'delegate'
+
 module Combine
   class PageFragment < SimpleDelegator
 
