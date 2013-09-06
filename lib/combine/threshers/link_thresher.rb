@@ -1,3 +1,5 @@
+# TODO: Expand functionality to accept a wide array of different input options (a tag w/ href, uri string, js)
+
 module Combine
   class LinkThresher < AbstractThresher
     def start

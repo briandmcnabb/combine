@@ -14,7 +14,7 @@ module Combine
 
     def initialize(fragment, pattern)
       @fragment = fragment
-      @pattern   = pattern
+      @pattern  = pattern
     end
 
     attr_accessor :nodes

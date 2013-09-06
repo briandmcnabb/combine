@@ -23,6 +23,15 @@ Goals:
 + Stable (Fault Tolerant)
 + Fast
 
+### Caching
+```ruby
+Cache === Hash     # >> true
+```
+
+Use [Moneta](https://github.com/minad/moneta) to use whatever cache store implementation you choose.
+
+
+
 ### Harvest Pattern
 ```ruby
 {

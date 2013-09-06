@@ -8,6 +8,11 @@
 module Combine
   class FieldThresher < AbstractThresher
 
+    def initialize(fragment, pattern)
+      super
+      @html_winnower = HtmlWinnower.new
+    end
+
     attr_accessor :html, :text
 
     def start
@@ -31,7 +36,7 @@ module Combine
     end
 
     def get_text
-      HtmlWinnower.new(nodes).start
+      @html_winnower.start(nodes)
     end
   end
 end
