@@ -2,11 +2,10 @@ require "combine/version"
 
 require "combine/config"
 require "combine/factory"
+require "combine/elevator"
+require "combine/harvest"
 require "combine/yield"
-
-require "combine/utilities/cache"
-require "combine/utilities/paginator"
-require "combine/utilities/uri_normalizer"
+require "combine/uri_normalizer"
 
 require "combine/reapers/reaper_factory"
 require "combine/reapers/index_page_reaper"
@@ -24,9 +23,9 @@ require "combine/pages/null_page"
 require "combine/pages/page_fragment"
 require "combine/pages/null_page_fragment"
 
-require "combine/harvest_patterns/page_pattern"
-require "combine/harvest_patterns/field_pattern"
-require "combine/harvest_patterns/selector_pattern"
+require "combine/patterns/page_pattern"
+require "combine/patterns/field_pattern"
+require "combine/patterns/selector_pattern"
 
 module Combine
 end

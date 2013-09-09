@@ -3,13 +3,12 @@ require 'hashie'
 
 module Combine
   class Yield < SimpleDelegator
-    def initialize(metadata={})
-      @metadata = metadata
+    include ProtoConfig
+
+    def initialize
       @errors   = []
       @delegate_sd_obj = Hashie::Mash.new
     end
-
-    attr_reader :metadata
 
     def attributes
       self.keys
@@ -39,6 +38,17 @@ module Combine
         log:      log,
         debug:    debug
       }
+    end
+
+    def to_json
+      serialize.to_json
+    end
+
+
+  private
+
+    def metadata
+      @metadata ||= config.fetch(:metadata){ Hash.new }
     end
   end
 end

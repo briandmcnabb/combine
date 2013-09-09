@@ -1,16 +1,18 @@
 module Combine
   class PageReaper
+    include ProtoConfig
+    proto_collaborators :_yield, :fragment_reaper
 
-    def initialize(uri, pattern, harvest=HarvestYield.new)
+    def initialize(uri, pattern, _yield=_yield.new)
       @uri     = uri
       @pattern = pattern
-      @harvest = harvest
+      @_yield = _yield
     end
 
     def start
       fragment = page.fragment_matching(@pattern.wrapper)
-      FragmentReaper.new(fragment, @pattern, @harvest).start
-      @harvest
+      fragment_reaper.build(fragment, @pattern, @_yield).start
+      @_yield
     end
 
 
@@ -21,7 +23,7 @@ module Combine
         Page.fetch(uri)
       rescue => exception
         msg = "Fetching #{uri.to_s} threw the following: #{exception}"
-        @harvest.errors << msg and NullPage.new
+        @_yield.errors << msg and NullPage.new
       end
     end
   end

@@ -10,6 +10,9 @@
 
 module Combine
   class AbstractThresher
+    include ProtoConfig
+    proto_collaborators :html_winnower
+
     Error = Class.new(StandardError)
 
     def initialize(fragment, pattern)
@@ -18,6 +21,7 @@ module Combine
     end
 
     attr_accessor :nodes
+
 
   private
 

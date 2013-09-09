@@ -6,7 +6,8 @@
 
 
 module Combine
-  class FieldThresher < AbstractThresher
+  class FieldThresher
+    include ProtoConfig
 
     def initialize(fragment, pattern)
       super
@@ -36,7 +37,7 @@ module Combine
     end
 
     def get_text
-      @html_winnower.start(nodes)
+      html_winnower.build(nodes).start
     end
   end
 end
